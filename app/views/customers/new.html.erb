@@ -1,0 +1,11 @@
+<h1>Cadastrar Cliente</h1>
+
+<%= simple_form_for @customer do |f| %>
+  <%= f.input :name, label: 'Nome' %>
+  <%= f.input :customer_type, collection: ['PJ','PF'], prompt:'Selecione', label: 'Tipo' %>
+  <%= f.input :billing_address, label: 'Endereço de faturamento' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :phone, label: 'Telefone' %>
+  <%= f.input :document, label: 'Cnpj/Cpf' %>
+  <%= f.submit 'Cadastrar Cliente' %>
+<% end %>
