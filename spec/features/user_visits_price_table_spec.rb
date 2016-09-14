@@ -2,14 +2,15 @@ require 'rails_helper'
 
 feature 'User visits price table' do
   scenario 'sucessfully' do
-    category = EquipmentCategory.create(name: )
-    equipment = Equipment.create(category: 'Furadeira')
-    price = Price.create(rental_period: 5, category: equipment.category, amount: 10 )
+    category = EquipmentCategory.create(name:'Elétricos')
 
-    visit price_path
+    price = Price.create(rental_period: 5, equipment_category: category, amount: 10 )
 
-    expect(page).to have_content("Furadeira")
+    visit price_index_path
+
+    expect(page).to have_content("Elétricos")
     expect(page).to have_content("5")
+    expect(page).to have_content("10")
 
   end
 end
