@@ -2,12 +2,15 @@ require 'rails_helper'
 
 feature 'user creates contract' do
   scenario 'successfully' do
-    contract = build(:contract)
+    equipments = ['Furadeira', 'Betoneira']
+
+    contract = build(:contract, equipments: equipments)
 
     visit new_contract_path
 
     fill_in 'Cliente', with: contract.customer
-    fill_in 'Equipamento', with: contract.equipment
+    check "#{contract.equipments[0]}"
+    check "#{contract.equipments[1]}"
     fill_in 'Valor dos equipamentos', with: contract.acquisition_price
     fill_in 'Endereço de Entrega', with: contract.delivery_address
     fill_in 'Responsável na Obra', with: contract.responsable
