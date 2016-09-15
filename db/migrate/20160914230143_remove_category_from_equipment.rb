@@ -4,7 +4,7 @@ class RemoveCategoryFromEquipment < ActiveRecord::Migration[5.0]
     #   cat = EquipmentCategory.create(name: e.category)
     #   e.equipment_category = cat
     #   e.save!
-    end
+    #$end
     remove_column :equipment, :category, :string
   end
 end
