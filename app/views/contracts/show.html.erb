@@ -1,2 +1,4 @@
 <h1>Contrato</h1>
+<%#binding.pry%>
 <%= @contract.customer %>
+<%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %>
