@@ -1,0 +1,7 @@
+<% @contracts.each do |contract|%>
+
+  <%= contract.customer%>
+  <%= contract.equipment%>
+  <%= contract.acquisition_price%>
+  <%= link_to contract.id, contract%>
+<%end%>

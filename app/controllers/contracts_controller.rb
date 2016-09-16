@@ -12,8 +12,11 @@ class ContractsController < ApplicationController
     redirect_to @contract
   end
 
-  private
+  def index
+    @contracts = Contract.all
+  end
 
+  private
   def contract_params
     params.require(:contract).permit(:customer, :equipment, :acquisition_price, :delivery_address, :responsable, :cpf, :rental_period, :initial_date, :amount, :discount, :created_at)
   end
