@@ -3,7 +3,7 @@
 <div>
   <%= simple_form_for @contract do |f| %>
     <%= f.input :customer, label: 'Cliente' %>
-    <%= f.input :equipment, label: 'Equipamento' %>
+    <%= f.association :equipment, label_method: :name, as: :check_boxes %>
     <%= f.input :acquisition_price, label: 'Valor dos equipamentos' %>
     <%= f.input :delivery_address, label: 'Endereço de Entrega' %>
     <%= f.input :responsable, label: 'Responsável na Obra' %>

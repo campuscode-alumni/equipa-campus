@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :contract do
     customer 'Vagas'
-    equipment 'Furadeira'
     acquisition_price 2000.5
     delivery_address 'Rua Pamplona'
     responsable 'Paulo'

@@ -1,2 +1,7 @@
 <h1>Contrato</h1>
-<%= @contract.customer %>
+<p><%= @contract.customer %></p>
+<p><%= @contract.equipment.each do |equipment| %>
+ <%= equipment.name %>
+<% end %>
+
+</p>
