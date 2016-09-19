@@ -1,7 +1,14 @@
 <h1>Contrato</h1>
-<p><%= @contract.customer %></p>
-<p><%= @contract.equipment.each do |equipment| %>
-  <%= equipment.name %>
+<p>Cliente: <%= @contract.customer %></p>
+<p> Equipamentos: <% @contract.equipment.each do |equipment| %>
+  <ul><li><%= equipment.name %></li></ul>
 <% end %>
-<%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %>
-</p>
+<p>Endereço de Entrega: <%= @contract.delivery_address %></p>
+<p>Responsável: <%= @contract.responsable %></p>
+<p>CPF: <%= @contract.cpf %></p>
+<p>Prazo de Locação: <%= @contract.rental_period %></p>
+<p>Data Inicial: <%= @contract.initial_date %></p>
+<p>Valor: <%= @contract.amount %></p>
+<p>Desconto: <%= @contract.discount %></p>
+<p>Data de Emissão: <%= @contract.created_at %></p>
+<p><%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %></p>
