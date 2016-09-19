@@ -3,7 +3,6 @@ require 'rails_helper'
 feature 'User creates equipment' do
   scenario 'sucessfully' do
 
-
     category = EquipmentCategory.create(name:'Elétricos')
 
     visit new_equipment_path

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 feature 'User issues return receipt' do
   scenario 'sucessfully' do
-    contract = create(:contract)
+    equipment = create(:equipment)
+    contract = create(:contract, equipment: [equipment])
 
     visit contracts_path
 
@@ -15,7 +16,14 @@ feature 'User issues return receipt' do
     expect(page).to have_css('h1', text: 'Recibo de Devolução')
     expect(page).to have_content 'Juan'
     expect(page).to have_content '277'
-    expect(page).to have_content contract.equipment
+
+    expect(page).to have_content equipment.description
+
+
+
+    #<%= @contract.equipment.each do |equipment| %>
+     #<%= equipment.name %>
+    #<% end %>
 
   end
 end

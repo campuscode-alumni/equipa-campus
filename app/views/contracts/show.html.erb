@@ -1,4 +1,7 @@
 <h1>Contrato</h1>
-<%#binding.pry%>
-<%= @contract.customer %>
+<p><%= @contract.customer %></p>
+<p><%= @contract.equipment.each do |equipment| %>
+  <%= equipment.name %>
+<% end %>
 <%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %>
+</p>

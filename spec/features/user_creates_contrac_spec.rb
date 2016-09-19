@@ -2,12 +2,16 @@ require 'rails_helper'
 
 feature 'user creates contract' do
   scenario 'successfully' do
+    category = create(:equipment_category, name: 'Furadeira')
+    equipment1 = create(:equipment, equipment_category: category)
+
     contract = build(:contract)
 
     visit new_contract_path
 
+
     fill_in 'Cliente', with: contract.customer
-    fill_in 'Equipamento', with: contract.equipment
+    check category.name
     fill_in 'Valor dos equipamentos', with: contract.acquisition_price
     fill_in 'Endereço de Entrega', with: contract.delivery_address
     fill_in 'Responsável na Obra', with: contract.responsable
@@ -21,5 +25,6 @@ feature 'user creates contract' do
     click_on 'Criar Contrato'
 
     expect(page).to have_content 'Vagas'
+    expect(page).to have_content category.name
   end
 end
