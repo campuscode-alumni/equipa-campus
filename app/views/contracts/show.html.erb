@@ -1,7 +1,10 @@
-<h1>Contrato</h1>
-<p><%= @contract.customer %></p>
-<p><%= @contract.equipment.each do |equipment| %>
-  <%= equipment.name %>
-<% end %>
+<h1><%= @contract.customer %></h1>
+<dl class="dl-horizontal">
+  <dt>Lista de Equipamentos</dt>
+    <dd>
+    <p><% @contract.equipment.each do |equipment| %>
+      <%= equipment.name %>
+    <% end %>
+    </dd>
+
 <%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %>
-</p>
