@@ -1,5 +1,4 @@
 class ReceiptsController < ApplicationController
-
   def new
     @receipt = Receipt.new
     @contract = Contract.find(params[:contract_id])
@@ -16,9 +15,9 @@ class ReceiptsController < ApplicationController
     @receipt = @contract.receipt
   end
 
-private
- def receipt_params
-   params.require(:receipt).permit(:name, :cpf)
- end
+  private
 
+  def receipt_params
+    params.require(:receipt).permit(:name, :cpf)
+  end
 end
