@@ -1,8 +1,7 @@
 <h1><%= @contract.customer %></h1>
 <dl class="dl-horizontal">
   <dt>Lista de Equipamentos</dt>
-    <dd>
-    <p><% @contract.equipment.each do |equipment| %>
+    <dd><% @contract.equipment.each do |equipment| %>
       <%= equipment.name %>
     <% end %>
     </dd>
