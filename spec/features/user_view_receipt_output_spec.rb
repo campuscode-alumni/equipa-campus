@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'user creates contract' do
-  scenario 'successfully' do
+feature 'user view receipt output' do
+  scenario 'sucessfully' do
     category = create(:equipment_category, name: 'Furadeira')
     equipment1 = create(:equipment, equipment_category: category)
 
@@ -23,7 +23,5 @@ feature 'user creates contract' do
 
     click_on 'Criar Contrato'
 
-    expect(page).to have_content 'Vagas'
-    expect(page).to have_content category.name
   end
 end

@@ -19,11 +19,5 @@ feature 'User issues return receipt' do
 
     expect(page).to have_content equipment.description
 
-
-
-    #<%= @contract.equipment.each do |equipment| %>
-     #<%= equipment.name %>
-    #<% end %>
-
   end
 end
