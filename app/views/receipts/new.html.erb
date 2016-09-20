@@ -1,3 +1,4 @@
+<%= flash[:notice]%>
 <%= simple_form_for [@contract, @receipt] do |f| %>
   <%= f.input :name, label: 'Nome' %>
   <%= f.input :cpf, label: 'CPF'%>

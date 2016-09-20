@@ -6,8 +6,13 @@ class ReceiptsController < ApplicationController
 
   def create
     @contract = Contract.find(params[:contract_id])
-    @receipt = @contract.create_receipt(receipt_params)
-    redirect_to [@contract, @receipt]
+    @receipt = @contract.build_receipt(receipt_params)
+    if @receipt.save
+      redirect_to [@contract, @receipt]
+    else
+      flash[:notice] = 'Campos Nome e CPF são obrigatórios'
+      render :new
+    end
   end
 
   def show

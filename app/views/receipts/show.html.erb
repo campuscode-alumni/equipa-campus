@@ -1,6 +1,18 @@
 <h1>Recibo de Devolução</h1>
-<p><%= @receipt.name%></p>
-<p><%= @receipt.cpf%></p>
+
+<p>São Paulo, 13 de Janeiro de 2016</p>
+
+
+<p>Eu, <%= @receipt.name%>, declaro ter recebido os equipamentos
 <% @receipt.contract.equipment.each do |equipment|%>
-  <p><%= equipment.description %></p>
+  <%= equipment.equipment_category.name %>(<%= equipment.serial_number %>);
 <% end %>
+em devolução referente ao contrato <%= @receipt.contract_id%> em perfeitas
+condições da empresa <%= @receipt.contract.customer%>, inscrita no CNPJ/CPF
+<%= @receipt.cpf%> no dia (__/___/___).
+</p>
+
+
+
+<p> _____________________________ <br>
+Assinatura do Funcionário</p>
