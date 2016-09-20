@@ -1,5 +1,5 @@
 <%= simple_form_for [@contract, @receipt] do |f| %>
   <%= f.input :name, label: 'Nome' %>
   <%= f.input :cpf, label: 'CPF'%>
-  <%= f.submit 'Visualizar Recibo'%>
+  <%= f.submit 'Visualizar Recibo', class:'btn btn-primary'%>
 <% end %>

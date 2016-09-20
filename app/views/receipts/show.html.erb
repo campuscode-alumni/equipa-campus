@@ -1,6 +1,6 @@
 <h1>Recibo de Devolução</h1>
-<%= @receipt.name%>
-<%= @receipt.cpf%>
+<p><%= @receipt.name%></p>
+<p><%= @receipt.cpf%></p>
 <% @receipt.contract.equipment.each do |equipment|%>
-  <%= equipment.description %>
+  <p><%= equipment.description %></p>
 <% end %>

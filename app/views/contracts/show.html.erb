@@ -1,5 +1,6 @@
 <h1>Contrato</h1>
-<p>Cliente: <%= @contract.customer %></p>
+<h2><%= @contract.customer %></h2>
+
 <p> Equipamentos: <% @contract.equipment.each do |equipment| %>
   <ul><li><%= equipment.name %></li></ul>
 <% end %>

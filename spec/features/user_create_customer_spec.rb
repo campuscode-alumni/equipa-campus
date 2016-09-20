@@ -9,11 +9,11 @@ feature 'user create customer' do
 
     fill_in 'Nome', with: customer.name
     #fill_in 'Tipo', with: customer.customer_type
-    select 'PF', from: 'Tipo' 
+    select 'PF', from: 'Tipo'
     fill_in 'Endereço de faturamento', with: customer.billing_address
     fill_in 'Email', with: customer.email
     fill_in 'Telefone', with: customer.phone
-    fill_in 'Cnpj/Cpf', with: customer.document
+    fill_in 'CNPJ/CPF', with: customer.document
 
     click_on 'Cadastrar Cliente'
 
