@@ -9,9 +9,8 @@
 <% end %>
 em devolução referente ao contrato <%= @receipt.contract_id%> em perfeitas
 condições da empresa <%= @receipt.contract.customer%>, inscrita no CNPJ/CPF
-<%= @receipt.cpf%> no dia (__/___/___).
+<%= @receipt.cpf%> no dia <%= @receipt.contract.return_date%>.
 </p>
-
 
 
 <p> _____________________________ <br>

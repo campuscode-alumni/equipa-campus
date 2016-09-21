@@ -12,4 +12,8 @@
 <p>Valor: <%= @contract.amount %></p>
 <p>Desconto: <%= @contract.discount %></p>
 <p>Data de Emissão: <%= @contract.created_at %></p>
+<% if @contract.has_receipt? %>
+<p><%= link_to 'Visualizar recibo de devolução', contract_receipt_path(@contract,@contract.receipt) %></p>
+<% else %>
 <p><%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %></p>
+<% end %>
