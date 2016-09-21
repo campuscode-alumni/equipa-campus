@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user creates contract' do
   scenario 'successfully' do
     category = create(:equipment_category, name: 'Furadeira')
-    equipment1 = create(:equipment, equipment_category: category)
+    create(:equipment, equipment_category: category)
 
     contract = build(:contract)
 

@@ -1,5 +1,6 @@
 <h1>Contrato</h1>
-<p>Cliente: <%= @contract.customer %></p>
+<h2><%= @contract.customer %></h2>
+
 <p> Equipamentos: <% @contract.equipment.each do |equipment| %>
   <ul><li><%= equipment.name %></li></ul>
 <% end %>
@@ -12,4 +13,8 @@
 <p>Desconto: <%= @contract.discount %></p>
 <p>Data de Emissão: <%= @contract.created_at %></p>
 <p><%= link_to 'Emitir recibo de saída', delivery_receipt_contract_path, method: :post %></p>
+<% if @contract.receipt? %>
+<p><%= link_to 'Visualizar recibo de devolução', contract_receipt_path(@contract,@contract.receipt) %></p>
+<% else %>
 <p><%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %></p>
+<% end %>

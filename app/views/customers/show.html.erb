@@ -1,14 +1,10 @@
 
 <h1>Dados do Cliente</h1>
-<p>Nome</p>
-<p><%= @customer.name %></p>
-<p>Tipo</p>
-<p><%= @customer.customer_type %></p>
-<p>Endereço de faturamento</p>
-<p><%= @customer.billing_address %></p>
-<p>Email</p>
-<p><%= @customer.email %></p>
-<p>Telefone</p>
-<p><%= @customer.phone %></p>
-<p>Cnpj/Cpf</p>
-<p><%= @customer.document %></p>
+<dl class="dl-horizontal">
+  <dt>Nome</dt><dd><%= @customer.name %></dd>
+  <dt>Tipo</dt><dd><%= @customer.customer_type %></dd>
+  <dt>Endereço de faturamento</dt><dd><%= @customer.billing_address %></dd>
+  <dt>Email</dt><dd><%= @customer.email %></dd>
+  <dt>Telefone</dt><dd><%= @customer.phone %></dd>
+  <dt>CNPJ/CPF</dt><dd><%= @customer.document %></dd>
+</dl>

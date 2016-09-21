@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :equipment do
     equipment_category
-    description  'Modelo Henrique'
+    description 'Modelo Henrique'
     serial_number 'q42425'
     asset_number '634636'
     acquisition_price 'MyString'
