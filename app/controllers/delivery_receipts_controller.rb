@@ -9,5 +9,4 @@ class DeliveryReceiptsController < ApplicationController
     @contract = Contract.find(params[:id])
     @delivery_receipt = @contract.delivery_receipt
   end
-
 end
