@@ -4,7 +4,7 @@ feature 'User issues return receipt' do
   scenario 'sucessfully' do
     equipment = create(:equipment)
     contract = create(:contract, equipment: [equipment])
-    receipt = create(:receipt, name: 'Juan', cpf: '277', contract: contract)
+    create(:receipt, name: 'Juan', cpf: '277', contract: contract)
 
     visit contracts_path
 
