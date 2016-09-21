@@ -11,4 +11,5 @@
 <p>Valor: <%= @contract.amount %></p>
 <p>Desconto: <%= @contract.discount %></p>
 <p>Data de Emissão: <%= @contract.created_at %></p>
+<p><%= link_to 'Emitir recibo de saída', delivery_receipt_contract_path, method: :post %></p>
 <p><%= link_to 'Emitir Recibo de devolução', new_contract_receipt_path(@contract) %></p>
