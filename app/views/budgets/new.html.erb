@@ -1,0 +1,12 @@
+<h1>Orçamento</h1>
+<%= flash[:error] %>
+
+<div>
+  <%= simple_form_for @budget do |f| %>
+    <%= f.input :name, label: 'Nome' %>
+    <%= f.input :phone, label: 'Telefone' %>
+    <%= f.input :email, label: 'Email' %>
+    <%= f.input :subject, label: 'Assunto'%>
+    <%= f.submit 'Enviar orçamento'%>
+    <% end %>
+</div>
