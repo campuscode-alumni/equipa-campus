@@ -19,7 +19,7 @@ feature 'User issues return receipt' do
     expect(page).to have_content '277'
     expect(page).to have_content contract.return_date
     expect(page).to have_content contract.id
-    expect(page).to have_content contract.customer
+    expect(page).to have_content contract.customer.name
     expect(page).to have_content equipment.serial_number
     expect(page).to have_content equipment.equipment_category.name
   end

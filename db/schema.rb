@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160921233944) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.string   "customer"
     t.float    "acquisition_price"
     t.string   "delivery_address"
     t.string   "responsable"
@@ -34,6 +33,8 @@ ActiveRecord::Schema.define(version: 20160921233944) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "equipment_id"
+    t.integer  "customer_id"
+    t.index ["customer_id"], name: "index_contracts_on_customer_id"
     t.index ["equipment_id"], name: "index_contracts_on_equipment_id"
   end
 

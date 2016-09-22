@@ -8,8 +8,13 @@ class ContractsController < ApplicationController
   end
 
   def create
-    @contract = Contract.create contract_params
-    redirect_to @contract
+    @contract = Contract.new (contract_params)
+    if @contract.save
+      redirect_to @contract
+    else
+      flash[:notice] = 'Todos campos são obrigatórios'
+      render :new
+    end
   end
 
   def index
@@ -19,7 +24,7 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contract).permit(:customer, :acquisition_price,
+    params.require(:contract).permit(:customer_id, :acquisition_price,
                                      :delivery_address, :responsable,
                                      :cpf, :rental_period, :initial_date,
                                      :amount, :discount, :created_at,
