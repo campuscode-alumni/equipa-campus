@@ -20,12 +20,13 @@ feature 'user creates contract' do
     fill_in 'CPF do Responsável', with: contract.cpf
     fill_in 'Prazo de Locação', with: contract.rental_period
     fill_in 'Data de Início', with: contract.initial_date
-    fill_in 'Valor', with: contract.amount
+    fill_in 'Valor do contrato', with: contract.amount
     fill_in 'Desconto', with: contract.discount
     fill_in 'Data de Emissão', with: contract.created_at
 
     click_on 'Criar Contrato'
 
+    expect(page).to have_content 'Furadeira'
     expect(page).to have_content "Cliente: #{customer.name}"
     expect(page).to have_content "R$ 20,00"
     expect(page).to have_content contract.delivery_address
@@ -57,7 +58,7 @@ feature 'user creates contract' do
     fill_in 'CPF do Responsável',     with: ''
     fill_in 'Prazo de Locação',       with: ''
     fill_in 'Data de Início',         with: ''
-    fill_in 'Valor',                  with: ''
+    fill_in 'Valor do contrato',                  with: ''
     fill_in 'Desconto',               with: ''
     fill_in 'Data de Emissão',        with: ''
 
