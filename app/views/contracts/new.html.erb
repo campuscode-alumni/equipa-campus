@@ -1,10 +1,10 @@
 <h1>Novo Contrato</h1>
-
+<%= flash[:notice]%>
 <div>
   <%= simple_form_for @contract do |f| %>
-    <%= f.input :customer, label: 'Cliente' %>
+    <%= f.association :customer, label: 'Cliente'  %>
     <%= f.association :equipment, label_method: :name, as: :check_boxes, label: 'Equipamentos'  %>
-    <%= f.input :acquisition_price, label: 'Valor dos equipamentos' %>
+    <%= f.input :acquisition_price, label: 'Valor dos equipamentos (R$)' %>
     <%= f.input :delivery_address, label: 'Endereço de Entrega' %>
     <%= f.input :responsable, label: 'Responsável na Obra' %>
     <%= f.input :cpf, label: 'CPF do Responsável' %>

@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :contract do
-    customer 'Vagas'
     acquisition_price 2000.5
     delivery_address 'Rua Pamplona'
     responsable 'Paulo'
@@ -10,5 +9,6 @@ FactoryGirl.define do
     amount 1000.5
     discount 50.5
     created_at '2016-09-12 22:11:19'
+    customer
   end
 end

@@ -1,17 +1,18 @@
 <h1>Contrato</h1>
-<h2><%= @contract.customer %></h2>
+<h2>Cliente: <%= @contract.customer.name %></h2>
 
 <p> Equipamentos: <% @contract.equipment.each do |equipment| %>
   <ul><li><%= equipment.name %></li></ul>
 <% end %>
+<p>Valor dos equipamentos: <%= number_to_currency @contract.acquisition_price %></p>
 <p>Endereço de Entrega: <%= @contract.delivery_address %></p>
 <p>Responsável: <%= @contract.responsable %></p>
 <p>CPF: <%= @contract.cpf %></p>
-<p>Prazo de Locação: <%= @contract.rental_period %></p>
-<p>Data Inicial: <%= @contract.initial_date %></p>
-<p>Valor: <%= @contract.amount %></p>
-<p>Desconto: <%= @contract.discount %></p>
-<p>Data de Emissão: <%= @contract.created_at %></p>
+<p>Prazo de Locação: <%= @contract.rental_period %> dias</p>
+<p>Data Inicial: <%= l @contract.initial_date %></p>
+<p>Valor: <%= number_to_currency @contract.amount %></p>
+<p>Desconto: <%= number_to_currency @contract.discount %></p>
+<p>Data de Emissão: <%= l @contract.created_at %></p>
 <% if @contract.receipt? %>
 <p><%= link_to 'Visualizar recibo de devolução', contract_receipt_path(@contract,@contract.receipt) %></p>
 <% else %>

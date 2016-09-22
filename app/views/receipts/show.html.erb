@@ -8,10 +8,9 @@
   <%= equipment.equipment_category.name %>(<%= equipment.serial_number %>);
 <% end %>
 em devolução referente ao contrato <%= @receipt.contract_id%> em perfeitas
-condições da empresa <%= @receipt.contract.customer%>, inscrita no CNPJ/CPF
+condições da empresa <%= @receipt.contract.customer.name%>, inscrita no CNPJ/CPF
 <%= @receipt.cpf%> no dia <%= @receipt.contract.return_date%>.
 </p>
-
 
 <p> _____________________________ <br>
 Assinatura do Funcionário</p>
