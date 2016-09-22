@@ -8,7 +8,6 @@ FactoryGirl.define do
     initial_date '2016-09-12 22:11:19'
     amount 1000.5
     discount 50.5
-    created_at Time.now
     customer
   end
 end

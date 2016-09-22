@@ -13,7 +13,7 @@
 <p>Data Inicial: <%= l @contract.initial_date %></p>
 <p>Valor: <%= number_to_currency @contract.amount %></p>
 <p>Desconto: <%= number_to_currency @contract.discount %></p>
-<p>Data de Emissão: <%= l @contract.created_at %></p>
+<p>Data de Emissão: <%= I18n.l  @contract.created_at %></p>
 
 <p><%= link_to 'Emitir recibo de saída', delivery_receipt_contract_path, method: :post %></p>
 <% if @contract.receipt? %>

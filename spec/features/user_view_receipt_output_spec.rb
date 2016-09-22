@@ -2,7 +2,8 @@ require 'rails_helper'
 
 feature 'user view receipt output' do
   scenario 'sucessfully' do
-    contract = create(:contract)
+    equipment = create(:equipment)
+    contract = create(:contract, equipment: [equipment])
 
     visit contracts_path
 

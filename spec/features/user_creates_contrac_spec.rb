@@ -22,9 +22,10 @@ feature 'user creates contract' do
     fill_in 'Data de Início', with: contract.initial_date
     fill_in 'Valor do contrato', with: contract.amount
     fill_in 'Desconto', with: contract.discount
-    fill_in 'Data de Emissão', with: contract.created_at
 
-    click_on 'Criar Contrato'
+    travel_to I18n.l Date.current do
+      click_on 'Criar Contrato'
+    end
 
     expect(page).to have_content 'Furadeira'
     expect(page).to have_content "Cliente: #{customer.name}"
@@ -37,7 +38,7 @@ feature 'user creates contract' do
     expect(page).to have_content "01/01/2016"
     expect(page).to have_content "R$ 10,00"
     expect(page).to have_content "R$ 5,00"
-    expect(page).to have_content I18n.l contract.created_at
+    expect(page).to have_content I18n.l Date.current
   end
 
   scenario 'unsuccessfully' do
@@ -58,7 +59,7 @@ feature 'user creates contract' do
     fill_in 'CPF do Responsável',     with: ''
     fill_in 'Prazo de Locação',       with: ''
     fill_in 'Data de Início',         with: ''
-    fill_in 'Valor do contrato',                  with: ''
+    fill_in 'Valor do contrato',      with: ''
     fill_in 'Desconto',               with: ''
     fill_in 'Data de Emissão',        with: ''
 
