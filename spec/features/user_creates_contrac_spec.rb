@@ -23,7 +23,7 @@ feature 'user creates contract' do
     fill_in 'Valor do contrato', with: contract.amount
     fill_in 'Desconto', with: contract.discount
 
-    travel_to I18n.l Date.current do
+    travel_to Date.current do
       click_on 'Criar Contrato'
     end
 
