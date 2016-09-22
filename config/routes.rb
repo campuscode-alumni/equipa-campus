@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :receipts, only: [:new, :show, :create]
   end
   resources :customers, only: [:new, :create, :show]
-  resources :budgets, only: [:new, :create, :show]
+  resources :budgets, only: [:new, :create, :show, :index]
 end
