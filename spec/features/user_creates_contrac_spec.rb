@@ -61,7 +61,7 @@ feature 'user creates contract' do
     fill_in 'Data de Início',         with: ''
     fill_in 'Valor do contrato',      with: ''
     fill_in 'Desconto',               with: ''
-    fill_in 'Data de Emissão',        with: ''
+
 
     click_on 'Criar Contrato'
 
