@@ -3,7 +3,8 @@
 <div>
   <%= simple_form_for @contract do |f| %>
     <%= f.association :customer, label: 'Cliente'  %>
-    <%= f.association :equipment, label_method: :name, as: :check_boxes, label: 'Equipamentos'  %>
+    <%= f.association :equipment, label_method: :name, as: :check_boxes,
+    label: 'Equipamentos' %>
     <%= f.input :acquisition_price, label: 'Valor dos equipamentos (R$)' %>
     <%= f.input :delivery_address, label: 'Endereço de Entrega' %>
     <%= f.input :responsable, label: 'Responsável na Obra' %>
@@ -12,7 +13,7 @@
     <%= f.input :initial_date, label: 'Data de Início', as: :string %>
     <%= f.input :amount, label: 'Valor do contrato' %>
     <%= f.input :discount, label: 'Desconto' %>
-    <%= f.input :created_at, label: 'Data de Emissão', as: :string %>
+    <%= f.label :created_at, "Data de Emissão: #{l Date.current}" %><br>
     <%= f.submit 'Criar Contrato', class:'btn btn-primary' %>
   <% end %>
 </div>
