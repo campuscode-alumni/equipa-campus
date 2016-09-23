@@ -16,5 +16,6 @@ feature 'user create customer' do
     click_on 'Cadastrar Cliente'
 
     expect(page).to have_content 'Paulo'
+    
   end
 end

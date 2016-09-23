@@ -18,7 +18,7 @@ feature 'user creates contract' do
     fill_in 'Endereço de Entrega', with: contract.delivery_address
     fill_in 'Responsável na Obra', with: contract.responsable
     fill_in 'CPF do Responsável', with: contract.cpf
-    fill_in 'Prazo de Locação', with: contract.rental_period
+    select '15', from: 'Prazo de locação'
     fill_in 'Data de Início', with: contract.initial_date
     fill_in 'Valor do contrato', with: contract.amount
     fill_in 'Desconto', with: contract.discount
